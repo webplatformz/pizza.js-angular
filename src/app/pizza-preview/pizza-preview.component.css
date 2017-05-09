@@ -1,0 +1,89 @@
+
+.pizza-preview-toggler {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    #pizzaPreview {
+        position: fixed;
+        top: 0;
+        right: -90%;
+        bottom: 0;
+        width: 90%;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #pizzaPreview.pizza-preview--open {
+        right: 0%;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .pizza-preview-toggler {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
+        width: 20px;
+        border: none;
+        background-color: #34495e;
+        color: #ecf0f1;
+        height: 50px;
+        padding: 0;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .pizza-preview-toggler:focus, .pizza-preview-toggler:active {
+        outline: none;
+    }
+}
+
+.pizza-preview-scroll {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+#pizzaAnimation {
+    flex-grow: 1;
+}
+
+.pizza-picture {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+}
+
+#shoppingCart {
+    border-top: 1px solid #bdc3c7;
+}
+
+.shopping-cart-list {
+    margin: 0;
+}
+
+.shopping-cart-list__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.shopping-cart-order {
+    text-align: right;
+}
+
+
+.shopping-cart-list-item-title {
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+.shopping-cart-list-item-tools {
+    min-width: 100px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}

@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PizzaSelectionComponent } from './pizza-selection/pizza-selection.component';
+import { PizzaPreviewComponent } from './pizza-preview/pizza-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PizzaSelectionComponent
+    PizzaSelectionComponent,
+    PizzaPreviewComponent
   ],
   imports: [
     BrowserModule,
