@@ -2,7 +2,7 @@
   <div class="pizza-tiles">
     <div *ngFor="let pizza of pizzas" (click)="onSelectPizza(pizza)" class="pizza-tile">
       <div class="pizza-tile__avatar">
-        {{pizza.name.substring(0, 1)}}
+        {{getPizzaAbbreviation(pizza.name)}}
       </div>
       <div class="pizza-tile__content" [ngClass]="{'pizza-tile--selected': pizza.name === selectedPizza.name}">
         <h3 class="pizza-tile__title">{{pizza.name}}</h3>
