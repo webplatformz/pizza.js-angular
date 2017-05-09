@@ -1,6 +1,6 @@
 <div>
   <div class="pizza-tiles">
-    <div *ngFor="let pizza of pizzas" class="pizza-tile">
+    <div *ngFor="let pizza of pizzas" (click)="onSelectPizza(pizza)" class="pizza-tile">
       <div class="pizza-tile__avatar">
         {{pizza.name.substring(0, 1)}}
       </div>
@@ -14,8 +14,8 @@
   </div>
   <hr class="pizza-selection-divider">
   <div id="pizzaIngredients">
-    <label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
-      <input type="checkbox" /> {{ingredient.name}} - {{ingredient.price}}
+    <label *ngFor="let selectableIngredient of ingredients" class="pizza-ingredients__item">
+      <input type="checkbox" [(ngModel)]="selectableIngredient.selected" (ngModelChange)="updatePizzaPrice()" /> {{selectableIngredient.ingredient.name}} - {{selectableIngredient.ingredient.price}}
     </label>
   </div>
   <hr class="pizza-selection-divider">
