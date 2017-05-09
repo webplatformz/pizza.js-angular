@@ -1,6 +1,7 @@
 import { Ingredient } from './../typings/ingredient';
 import { Component } from '@angular/core';
 import { Pizza } from "app/typings/pizza";
+import { PizzaService } from "app/pizza-selection/pizza.service";
 
 @Component({
   selector: 'app-pizza-selection',
@@ -17,13 +18,13 @@ export class PizzaSelectionComponent {
 
   pizzaPrice: number = 0;
 
-  constructor() { 
-    this.pizzas = this.loadPizzas();
-    this.ingredients = this.loadIngredients();
+  constructor(private pizzaService: PizzaService) { 
+    this.pizzaService.getPizzas().subscribe(pizzas => {
+      this.pizzas = pizzas
+      this.onSelectPizza(this.pizzas[0]);
+    });
 
-    this.selectedPizza = this.pizzas[0];
-    this.selectedIngredients = this.ingredients.slice(0, 1);
-    this.updatePizzaPrice();
+    this.pizzaService.getIngredients().subscribe(ingredients => this.ingredients = ingredients);
   }
 
   private loadPizzas() {

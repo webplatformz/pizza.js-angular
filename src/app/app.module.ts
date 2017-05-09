@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PizzaSelectionComponent } from './pizza-selection/pizza-selection.component';
 import { PizzaPreviewComponent } from './pizza-preview/pizza-preview.component';
 import { ShoppingCartComponent } from './pizza-preview/shopping-cart/shopping-cart.component';
+import { PizzaService } from "app/pizza-selection/pizza.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ShoppingCartComponent } from './pizza-preview/shopping-cart/shopping-ca
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [PizzaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
