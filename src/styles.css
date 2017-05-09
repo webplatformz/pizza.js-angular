@@ -12,3 +12,23 @@ html, body {
 body {
     font-family: Helvetica Neue, Arial, sans-serif;
 }
+
+.order-button {
+    color: #ecf0f1;
+    background-color: #1abc9c;
+    border: none;
+    margin: 15px;
+    font-size: inherit;
+    font-family:  inherit;
+    font-weight: normal;
+    padding: 10px 15px;
+}
+
+button, a:not([href]) {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

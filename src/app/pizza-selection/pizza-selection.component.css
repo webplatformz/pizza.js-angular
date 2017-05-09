@@ -1,0 +1,53 @@
+
+
+.pizza-tiles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pizza-tile {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: box-shadow 0.15s ease-out;
+}
+
+.pizza-tile:hover {
+    box-shadow: 0px 0px 10px 5px rgba(41, 128, 185, 0.2);
+}
+
+.pizza-tile__title {
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #95a5a6;
+}
+
+.pizza-tile__description {
+    text-align: left;
+    margin: 0;
+    padding: 10px;
+}
+
+.pizza-tile__avatar {
+    min-width: 50px;
+    padding: 10px;
+    color: #ecf0f1;
+    background-color: #2980b9;
+}
+
+.pizza-tile__content {
+    flex-grow: 1;
+    border-left: 1px solid #95a5a6;
+}
+
+.pizza-selection-divider {
+    max-width: 61.9%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-size: contain;
+}
