@@ -1,43 +1,24 @@
 <div>
   <div class="pizza-tiles">
-    <div class="pizza-tile">
+    <div *ngFor="let pizza of pizzas" class="pizza-tile">
       <div class="pizza-tile__avatar">
-        M
+        {{pizza.name.substring(0, 1)}}
       </div>
       <div class="pizza-tile__content">
-        <h3 class="pizza-tile__title">Margherita</h3>
+        <h3 class="pizza-tile__title">{{pizza.name}}</h3>
         <p class="pizza-tile__description">
-          Tomate, Mozzarella, Oregano
-        </p>
-      </div>
-    </div>
-    <div class="pizza-tile">
-      <div class="pizza-tile__avatar">
-        P&F
-      </div>
-      <div class="pizza-tile__content">
-        <h3 class="pizza-tile__title">Prosciutto et Funghi</h3>
-        <p class="pizza-tile__description">
-          Tomate, Mozzarella, Oregano, Schinken, Pilze und noch mehr Pilze
-        </p>
-      </div>
-    </div>
-    <div class="pizza-tile">
-      <div class="pizza-tile__avatar">
-        M
-      </div>
-      <div class="pizza-tile__content">
-        <h3 class="pizza-tile__title">Margherita</h3>
-        <p class="pizza-tile__description">
-          Tomate, Mozzarella, Oregano
+          {{pizza.ingredients.join(', ')}}
         </p>
       </div>
     </div>
   </div>
   <hr class="pizza-selection-divider">
-  <p>
-    checkboxes
-  </p>
+  <div id="pizzaIngredients">
+    <label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
+      <input type="checkbox" /> {{ingredient.name}} - {{ingredient.price}}
+    </label>
+  </div>
   <hr class="pizza-selection-divider">
+  <span>Pizzapreis: {{pizzaPrice}}</span>
   <button class="order-button">Add to Shopping Cart</button>
 </div>
