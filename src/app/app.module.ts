@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PizzaSelectionComponent } from './pizza-selection/pizza-selection.component';
 import { PizzaPreviewComponent } from './pizza-preview/pizza-preview.component';
+import { ShoppingCartComponent } from './pizza-preview/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaSelectionComponent,
-    PizzaPreviewComponent
+    PizzaPreviewComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
