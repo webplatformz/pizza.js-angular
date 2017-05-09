@@ -10,19 +10,19 @@ import { Pizza } from "app/typings/pizza";
 export class PizzaSelectionComponent {
 
   pizzas: Pizza[] = [];
-  ingredients: SelectableIngredient[] = [];
+  ingredients: Ingredient[] = [];
 
   selectedPizza: Pizza;
+  selectedIngredients: Ingredient[] = [];
 
   pizzaPrice: number = 0;
 
   constructor() { 
     this.pizzas = this.loadPizzas();
-    this.ingredients = this
-      .loadIngredients()
-      .map(ingredient => new SelectableIngredient(ingredient, false));
+    this.ingredients = this.loadIngredients();
 
     this.selectedPizza = this.pizzas[0];
+    this.selectedIngredients = this.ingredients.slice(0, 1);
     this.updatePizzaPrice();
   }
 
@@ -48,17 +48,17 @@ export class PizzaSelectionComponent {
     this.updatePizzaPrice();
   }
 
+  onSelectIngredient(selectedIngredient: Ingredient, checked: boolean) {
+    this.selectedIngredients = this.selectedIngredients
+      .filter(ingredient => ingredient.name != selectedIngredient.name)
+      .concat(checked ? [selectedIngredient] : []);
+    
+    this.updatePizzaPrice();
+  }
+
   updatePizzaPrice() {
-    this.pizzaPrice = this.selectedPizza.price + this.ingredients
-      .filter(ingredient => ingredient.selected)
-      .map(ingredient => ingredient.ingredient.price)
+    this.pizzaPrice = this.selectedPizza.price + this.selectedIngredients
+      .map(ingredient => ingredient.price)
       .reduce((total, price) => total + price, 0);
   }
-}
-
-class SelectableIngredient {
-  constructor(
-    public ingredient: Ingredient,
-    public selected: boolean
-  ) {}
 }
