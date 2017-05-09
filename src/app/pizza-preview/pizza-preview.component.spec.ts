@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PizzaPreviewComponent } from './pizza-preview.component';
+import { ShoppingCartComponent } from "app/pizza-preview/shopping-cart/shopping-cart.component";
 
 describe('PizzaPreviewComponent', () => {
   let component: PizzaPreviewComponent;
@@ -8,7 +9,7 @@ describe('PizzaPreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaPreviewComponent ]
+      declarations: [ PizzaPreviewComponent, ShoppingCartComponent ]
     })
     .compileComponents();
   }));
