@@ -12,4 +12,9 @@ export class PizzaPreviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  togglePreview() {
+    document.getElementById('pizzaPreview').classList.toggle('pizza-preview--open');
+  }
+
 }
+
