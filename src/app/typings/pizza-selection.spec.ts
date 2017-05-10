@@ -1,6 +1,6 @@
 import {PizzaSelection} from './pizza-selection';
 
-fdescribe('PizzaSelection', () => {
+describe('PizzaSelection', () => {
   it('should calculate pizza price without ingredients', () => {
     const pizzaSelection = new PizzaSelection();
     pizzaSelection.pizza = {
