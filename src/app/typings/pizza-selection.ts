@@ -1,7 +1,16 @@
 import {Ingredient} from './ingredient';
 import {Pizza} from './pizza';
 
-export interface PizzaSelection {
+export class PizzaSelection {
   pizza: Pizza;
-  additionalIngredients: Ingredient[];
+  additionalIngredients: Ingredient[] = [];
+
+  getPrice(): number {
+    if (!this.pizza) {
+      return 0;
+    }
+    return this.pizza.price + this.additionalIngredients
+        .map(ingredient => ingredient.price)
+        .reduce((total, price) => total + price, 0);
+  }
 }

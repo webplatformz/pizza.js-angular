@@ -17,10 +17,7 @@ export class PizzaSelectionComponent {
   pizzas: Pizza[] = [];
   ingredients: Ingredient[] = [];
 
-  pizzaSelection: PizzaSelection = {
-    pizza: undefined,
-    additionalIngredients: []
-  };
+  pizzaSelection: PizzaSelection = new PizzaSelection();
 
   pizzaPrice = 0;
 
@@ -53,9 +50,7 @@ export class PizzaSelectionComponent {
   }
 
   private updatePizzaPrice() {
-    this.pizzaPrice = this.pizzaSelection.pizza.price + this.pizzaSelection.additionalIngredients
-        .map(ingredient => ingredient.price)
-        .reduce((total, price) => total + price, 0);
+    this.pizzaPrice = this.pizzaSelection.getPrice();
   }
 
   private emitPizzaConfiguration() {
