@@ -6,12 +6,14 @@
   </app-pizza-list>
 
   <hr class="pizza-selection-divider">
-  <div id="pizzaIngredients">
-    <label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
-      <input type="checkbox" [checked]="selectedIngredients.includes(ingredient)" (change)="onSelectIngredient(ingredient, $event.target.checked)" /> {{ingredient.name}} - {{ingredient.price}}
-    </label>
-  </div>
+  <app-ingredient-list [ingredients]="ingredients"
+                       [selectedIngredients]="selectedIngredients"
+                       (onAddIngredient)="onAddIngredient($event)"
+                       (onRemoveIngredient)="onRemoveIngredient($event)"
+                       id="pizzaIngredients">
+  </app-ingredient-list>
+
   <hr class="pizza-selection-divider">
-  <span>Pizzapreis: {{pizzaPrice}}</span>
+  <span>Pizzapreis: {{pizzaPrice | currency:'CHF'}}</span>
   <button class="order-button">Add to Shopping Cart</button>
 </div>

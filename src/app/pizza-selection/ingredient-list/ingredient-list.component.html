@@ -1,0 +1,4 @@
+<label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
+  <input type="checkbox" [checked]="selectedIngredients.includes(ingredient)"
+         (change)="onSelectIngredient(ingredient, $event.target.checked)"/> {{ingredient.name}} - {{ingredient.price}}
+</label>

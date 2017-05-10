@@ -1,7 +1,7 @@
-import { Ingredient } from '../typings/ingredient';
-import { Component } from '@angular/core';
-import { Pizza } from 'app/typings/pizza';
-import { PizzaService } from 'app/pizza-selection/pizza.service';
+import {Ingredient} from '../typings/ingredient';
+import {Component} from '@angular/core';
+import {Pizza} from 'app/typings/pizza';
+import {PizzaService} from 'app/pizza-selection/pizza.service';
 
 @Component({
   selector: 'app-pizza-selection',
@@ -13,7 +13,6 @@ export class PizzaSelectionComponent {
   pizzas: Pizza[] = [];
   selectedPizza: Pizza;
   ingredients: Ingredient[] = [];
-
   selectedIngredients: Ingredient[] = [];
 
   pizzaPrice = 0;
@@ -32,17 +31,20 @@ export class PizzaSelectionComponent {
     this.updatePizzaPrice();
   }
 
-  onSelectIngredient(selectedIngredient: Ingredient, checked: boolean) {
-    this.selectedIngredients = this.selectedIngredients
-      .filter(ingredient => ingredient.name !== selectedIngredient.name)
-      .concat(checked ? [selectedIngredient] : []);
+  onAddIngredient(ingredient: Ingredient) {
+    this.selectedIngredients.push(ingredient);
+    this.updatePizzaPrice();
+  }
 
+  onRemoveIngredient(removedIngredient: Ingredient) {
+    this.selectedIngredients = this.selectedIngredients
+      .filter(ingredient => ingredient.name !== removedIngredient.name);
     this.updatePizzaPrice();
   }
 
   updatePizzaPrice() {
     this.pizzaPrice = this.selectedPizza.price + this.selectedIngredients
-      .map(ingredient => ingredient.price)
-      .reduce((total, price) => total + price, 0);
+        .map(ingredient => ingredient.price)
+        .reduce((total, price) => total + price, 0);
   }
 }
