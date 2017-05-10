@@ -1,7 +1,7 @@
-import { Ingredient } from './../typings/ingredient';
+import { Ingredient } from '../typings/ingredient';
 import { Component } from '@angular/core';
-import { Pizza } from "app/typings/pizza";
-import { PizzaService } from "app/pizza-selection/pizza.service";
+import { Pizza } from 'app/typings/pizza';
+import { PizzaService } from 'app/pizza-selection/pizza.service';
 
 @Component({
   selector: 'app-pizza-selection',
@@ -16,11 +16,11 @@ export class PizzaSelectionComponent {
   selectedPizza: Pizza;
   selectedIngredients: Ingredient[] = [];
 
-  pizzaPrice: number = 0;
+  pizzaPrice = 0;
 
-  constructor(private pizzaService: PizzaService) { 
+  constructor(private pizzaService: PizzaService) {
     this.pizzaService.getPizzas().subscribe(pizzas => {
-      this.pizzas = pizzas
+      this.pizzas = pizzas;
       this.onSelectPizza(this.pizzas[0]);
     });
 
@@ -55,9 +55,9 @@ export class PizzaSelectionComponent {
 
   onSelectIngredient(selectedIngredient: Ingredient, checked: boolean) {
     this.selectedIngredients = this.selectedIngredients
-      .filter(ingredient => ingredient.name != selectedIngredient.name)
+      .filter(ingredient => ingredient.name !== selectedIngredient.name)
       .concat(checked ? [selectedIngredient] : []);
-    
+
     this.updatePizzaPrice();
   }
 
