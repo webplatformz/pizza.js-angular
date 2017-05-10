@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { PizzaSelectionComponent } from './pizza-selection/pizza-selection.component';
 import { PizzaPreviewComponent } from './pizza-preview/pizza-preview.component';
 import { ShoppingCartComponent } from './pizza-preview/shopping-cart/shopping-cart.component';
-import { PizzaService } from "app/pizza-selection/pizza.service";
+import { PizzaService } from 'app/pizza-selection/pizza.service';
+import { PizzaListComponent } from './pizza-selection/pizza-list/pizza-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaSelectionComponent,
     PizzaPreviewComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    PizzaListComponent
   ],
   imports: [
     BrowserModule,

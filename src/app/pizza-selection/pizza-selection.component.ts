@@ -11,9 +11,9 @@ import { PizzaService } from 'app/pizza-selection/pizza.service';
 export class PizzaSelectionComponent {
 
   pizzas: Pizza[] = [];
+  selectedPizza: Pizza;
   ingredients: Ingredient[] = [];
 
-  selectedPizza: Pizza;
   selectedIngredients: Ingredient[] = [];
 
   pizzaPrice = 0;
@@ -25,27 +25,6 @@ export class PizzaSelectionComponent {
     });
 
     this.pizzaService.getIngredients().subscribe(ingredients => this.ingredients = ingredients);
-  }
-
-  private loadPizzas() {
-    return [
-      {name: 'Margaritha', price: 4.95, ingredients: ['Mozzarella', 'Tomate']},
-      {name: 'Prosciutto Funghi', price: 5.95, ingredients: ['Mozzarella', 'Tomate', 'Schinken']},
-      {name: 'Hawaii', price: 6.95, ingredients: ['Mozzarella', 'Tomate', 'Oregano', 'Pilze', 'Noch mehr Pilze']}
-    ];
-  }
-
-  private loadIngredients() {
-    return [
-      {name: 'Schinken', price: 0.50},
-      {name: 'Pilze', price: 0.50},
-      {name: 'Extra Käse', price: 0.50},
-      {name: 'Ananas', price: 0.50}
-    ];
-  }
-
-  getPizzaAbbreviation(pizzaName: string) {
-    return pizzaName.split(' ').map(n => n[0]).join('');
   }
 
   onSelectPizza(pizza: Pizza) {

@@ -1,17 +1,10 @@
 <div>
-  <div class="pizza-tiles">
-    <div *ngFor="let pizza of pizzas" (click)="onSelectPizza(pizza)" class="pizza-tile">
-      <div class="pizza-tile__avatar">
-        {{getPizzaAbbreviation(pizza.name)}}
-      </div>
-      <div class="pizza-tile__content" [ngClass]="{'pizza-tile--selected': pizza.name === selectedPizza.name}">
-        <h3 class="pizza-tile__title">{{pizza.name}}</h3>
-        <p class="pizza-tile__description">
-          {{pizza.ingredients.join(', ')}}
-        </p>
-      </div>
-    </div>
-  </div>
+  <app-pizza-list [pizzas]="pizzas"
+                  [selectedPizza]="selectedPizza"
+                  (onSelectPizza)="onSelectPizza($event)"
+                  class="pizza-tiles">
+  </app-pizza-list>
+
   <hr class="pizza-selection-divider">
   <div id="pizzaIngredients">
     <label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
