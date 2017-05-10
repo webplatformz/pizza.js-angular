@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {PizzaSelection} from './typings/pizza-selection';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app stills works!';
+
+  pizzaSelection: PizzaSelection;
+
+  onChangePizzaConfiguration(pizzaSelection: PizzaSelection) {
+    this.pizzaSelection = pizzaSelection;
+  }
 }

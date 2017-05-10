@@ -1,13 +1,13 @@
 <div>
   <app-pizza-list [pizzas]="pizzas"
-                  [selectedPizza]="selectedPizza"
+                  [selectedPizza]="pizzaSelection.pizza"
                   (onSelectPizza)="onSelectPizza($event)"
                   class="pizza-tiles">
   </app-pizza-list>
 
   <hr class="pizza-selection-divider">
   <app-ingredient-list [ingredients]="ingredients"
-                       [selectedIngredients]="selectedIngredients"
+                       [selectedIngredients]="pizzaSelection.additionalIngredients"
                        (onAddIngredient)="onAddIngredient($event)"
                        (onRemoveIngredient)="onRemoveIngredient($event)"
                        id="pizzaIngredients">

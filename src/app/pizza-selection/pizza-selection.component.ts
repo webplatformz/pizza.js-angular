@@ -1,7 +1,8 @@
 import {Ingredient} from '../typings/ingredient';
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Pizza} from 'app/typings/pizza';
 import {PizzaService} from 'app/pizza-selection/pizza.service';
+import {PizzaSelection} from '../typings/pizza-selection';
 
 @Component({
   selector: 'app-pizza-selection',
@@ -10,10 +11,16 @@ import {PizzaService} from 'app/pizza-selection/pizza.service';
 })
 export class PizzaSelectionComponent {
 
+  @Output()
+  onChangePizzaConfiguration = new EventEmitter<PizzaSelection>();
+
   pizzas: Pizza[] = [];
-  selectedPizza: Pizza;
   ingredients: Ingredient[] = [];
-  selectedIngredients: Ingredient[] = [];
+
+  pizzaSelection: PizzaSelection = {
+    pizza: undefined,
+    additionalIngredients: []
+  };
 
   pizzaPrice = 0;
 
@@ -27,24 +34,31 @@ export class PizzaSelectionComponent {
   }
 
   onSelectPizza(pizza: Pizza) {
-    this.selectedPizza = pizza;
+    this.pizzaSelection.pizza = pizza;
     this.updatePizzaPrice();
+    this.emitPizzaConfiguration();
   }
 
   onAddIngredient(ingredient: Ingredient) {
-    this.selectedIngredients.push(ingredient);
+    this.pizzaSelection.additionalIngredients.push(ingredient);
     this.updatePizzaPrice();
+    this.emitPizzaConfiguration();
   }
 
   onRemoveIngredient(removedIngredient: Ingredient) {
-    this.selectedIngredients = this.selectedIngredients
+    this.pizzaSelection.additionalIngredients = this.pizzaSelection.additionalIngredients
       .filter(ingredient => ingredient.name !== removedIngredient.name);
     this.updatePizzaPrice();
+    this.emitPizzaConfiguration();
   }
 
-  updatePizzaPrice() {
-    this.pizzaPrice = this.selectedPizza.price + this.selectedIngredients
+  private updatePizzaPrice() {
+    this.pizzaPrice = this.pizzaSelection.pizza.price + this.pizzaSelection.additionalIngredients
         .map(ingredient => ingredient.price)
         .reduce((total, price) => total + price, 0);
+  }
+
+  private emitPizzaConfiguration() {
+    this.onChangePizzaConfiguration.emit(Object.assign({}, this.pizzaSelection));
   }
 }

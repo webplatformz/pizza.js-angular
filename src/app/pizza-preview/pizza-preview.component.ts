@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {PizzaSelection} from '../typings/pizza-selection';
 
 @Component({
   selector: 'app-pizza-preview',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pizza-preview.component.css']
 })
 export class PizzaPreviewComponent implements OnInit {
+
+  @Input()
+  pizzaSelection: PizzaSelection;
 
   constructor() {
   }

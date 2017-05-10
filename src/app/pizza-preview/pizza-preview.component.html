@@ -1,7 +1,12 @@
 <button (click)="togglePreview()" class="pizza-preview-toggler">&lt;</button>
 <div class="pizza-preview-scroll">
-    <div id="pizzaAnimation">
-        <img class="pizza-picture" alt="Pizza" src="/assets/images/pizza.png" />
-    </div>
-    <app-shopping-cart id="shoppingCart"></app-shopping-cart>
+  <div id="pizzaAnimation">
+    <img class="pizza-picture" alt="Pizza" src="/assets/images/pizza.png"/>
+
+    Name: {{pizzaSelection?.pizza.name}}
+    <ul>
+      <li *ngFor="let ingredient of pizzaSelection?.additionalIngredients">{{ingredient.name}}</li>
+    </ul>
+  </div>
+  <app-shopping-cart id="shoppingCart"></app-shopping-cart>
 </div>

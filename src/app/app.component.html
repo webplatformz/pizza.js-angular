@@ -1,4 +1,7 @@
 <main>
-  <app-pizza-selection id="pizzaSelection"></app-pizza-selection>
-  <app-pizza-preview id="pizzaPreview"></app-pizza-preview>
+  <app-pizza-selection (onChangePizzaConfiguration)="onChangePizzaConfiguration($event)"
+                       id="pizzaSelection"></app-pizza-selection>
+  <app-pizza-preview id="pizzaPreview"
+                     [pizzaSelection]="pizzaSelection">
+  </app-pizza-preview>
 </main>
