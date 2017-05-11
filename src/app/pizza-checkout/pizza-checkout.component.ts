@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-pizza-checkout',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutPageComponent implements OnInit {
 
-  constructor() { }
+  salutation: string;
+  firstname: string;
+  lastname: string;
+  street: string;
+  zip: string;
+  city: string;
+  phone: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.salutation = 'Herr';
   }
 
 }

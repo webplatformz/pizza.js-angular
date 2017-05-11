@@ -221,6 +221,10 @@ select {
   width: 100%;
 }
 
+.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c !important;
+}
+
 .address-form__input--validation-error {
   border: 1px solid #e74c3c !important;
 }
