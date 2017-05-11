@@ -15,8 +15,9 @@
 
   <div id="lastName" class="address-form__item">
     <input type="text" name="lastname" [(ngModel)]="address.lastname" placeholder="Nachname"
-           class="address-form__input address-form__input--validation-error"/>
-    <span class="address-form__validation-error-text">Nachname fehlt</span>
+           class="address-form__input"
+           #lastname="ngModel" required/>
+    <span *ngIf="lastname.errors?.required && lastname.touched" class="address-form__validation-error-text">Nachname fehlt</span>
   </div>
 
   <div id="streetAndNumber" class="address-form__item address-form__item--full-width">
