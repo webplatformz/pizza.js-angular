@@ -1,0 +1,39 @@
+<div id="addressForm">
+
+  <div id="salutation" class="address-form__item address-form__item--full-width">
+    <select>
+      <option>Frau</option>
+      <option>Herr</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div id="firstName" class="address-form__item">
+    <input type="text" placeholder="Vorname" class="address-form__input"/>
+  </div>
+
+  <div id="lastName" class="address-form__item">
+    <input type="text" placeholder="Nachname" class="address-form__input address-form__input--validation-error"/>
+    <span class="address-form__validation-error-text">Nachname fehlt</span>
+  </div>
+
+  <div id="streetAndNumber" class="address-form__item address-form__item--full-width">
+    <input type="text" placeholder="Strasse / Nr" class="address-form__input"/>
+  </div>
+
+  <div id="cityZip" class="address-form__item">
+    <input type="text" placeholder="PLZ" class="address-form__input"/>
+  </div>
+
+  <div class="address-form__item">
+    <input type="text" placeholder="Ort" class="address-form__input"/>
+  </div>
+
+  <div id="phoneNumber" class="address-form__item address-form__item--full-width">
+    <input type="tel" placeholder="Telefonnummer" class="address-form__input"/>
+  </div>
+
+  <div class="address-form__item address-form-item--align-right">
+    <button type="submit" class="address-form__order-button">Bestellen!</button>
+  </div>
+</div>
