@@ -20,8 +20,6 @@ export class PizzaSelectionComponent implements OnInit {
 
   pizzaSelection: PizzaSelection = new PizzaSelection();
 
-  pizzaPrice = 0;
-
   constructor(private pizzaService: PizzaService) {
   }
 
@@ -36,25 +34,18 @@ export class PizzaSelectionComponent implements OnInit {
 
   onSelectPizza(pizza: Pizza) {
     this.pizzaSelection.pizza = pizza;
-    this.updatePizzaPrice();
     this.emitPizzaConfiguration();
   }
 
   onAddIngredient(ingredient: Ingredient) {
     this.pizzaSelection.additionalIngredients.push(ingredient);
-    this.updatePizzaPrice();
     this.emitPizzaConfiguration();
   }
 
   onRemoveIngredient(removedIngredient: Ingredient) {
     this.pizzaSelection.additionalIngredients = this.pizzaSelection.additionalIngredients
       .filter(ingredient => ingredient.name !== removedIngredient.name);
-    this.updatePizzaPrice();
     this.emitPizzaConfiguration();
-  }
-
-  private updatePizzaPrice() {
-    this.pizzaPrice = this.pizzaSelection.getPrice();
   }
 
   private emitPizzaConfiguration() {

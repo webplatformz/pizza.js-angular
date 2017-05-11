@@ -14,6 +14,6 @@
   </app-ingredient-list>
 
   <hr class="pizza-selection-divider">
-  <span>Pizzapreis: {{pizzaPrice | currency:'CHF'}}</span>
+  <span>Pizzapreis: {{pizzaSelection.getPrice() | currency:'CHF'}}</span>
   <button class="order-button">Add to Shopping Cart</button>
 </div>
