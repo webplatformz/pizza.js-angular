@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Pizza} from '../../typings/pizza';
+import {Pizza} from '../../../typings/pizza';
 
 @Component({
   selector: 'app-pizza-list',

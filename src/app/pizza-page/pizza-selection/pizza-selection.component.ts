@@ -1,8 +1,8 @@
-import {Ingredient} from '../typings/ingredient';
+import {Ingredient} from '../../typings/ingredient';
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Pizza} from 'app/typings/pizza';
-import {PizzaService} from 'app/pizza-selection/pizza.service';
-import {PizzaSelection} from '../typings/pizza-selection';
+import {PizzaService} from 'app/pizza-page/pizza-selection/pizza.service';
+import {PizzaSelection} from '../../typings/pizza-selection';
 
 @Component({
   selector: 'app-pizza-selection',

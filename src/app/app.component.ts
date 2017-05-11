@@ -8,9 +8,4 @@ import {PizzaSelection} from './typings/pizza-selection';
 })
 export class AppComponent {
 
-  pizzaSelection: PizzaSelection;
-
-  onChangePizzaConfiguration(pizzaSelection: PizzaSelection) {
-    this.pizzaSelection = pizzaSelection;
-  }
 }
