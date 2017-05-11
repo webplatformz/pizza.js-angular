@@ -2,14 +2,14 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { PizzaService } from './pizza.service';
 
-describe('PizzaService', () => {
+xdescribe('PizzaService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [PizzaService]
     });
   });
 
-  it('should ...', inject([PizzaService], (service: PizzaService) => {
+  xit('should ...', inject([PizzaService], (service: PizzaService) => {
     expect(service).toBeTruthy();
   }));
 });

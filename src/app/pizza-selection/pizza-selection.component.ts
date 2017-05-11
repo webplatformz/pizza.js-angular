@@ -1,5 +1,5 @@
 import {Ingredient} from '../typings/ingredient';
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Pizza} from 'app/typings/pizza';
 import {PizzaService} from 'app/pizza-selection/pizza.service';
 import {PizzaSelection} from '../typings/pizza-selection';
@@ -9,7 +9,8 @@ import {PizzaSelection} from '../typings/pizza-selection';
   templateUrl: './pizza-selection.component.html',
   styleUrls: ['./pizza-selection.component.css']
 })
-export class PizzaSelectionComponent {
+export class PizzaSelectionComponent implements OnInit {
+
 
   @Output()
   onChangePizzaConfiguration = new EventEmitter<PizzaSelection>();
@@ -22,6 +23,9 @@ export class PizzaSelectionComponent {
   pizzaPrice = 0;
 
   constructor(private pizzaService: PizzaService) {
+  }
+
+  ngOnInit(): void {
     this.pizzaService.getPizzas().subscribe(pizzas => {
       this.pizzas = pizzas;
       this.onSelectPizza(this.pizzas[0]);

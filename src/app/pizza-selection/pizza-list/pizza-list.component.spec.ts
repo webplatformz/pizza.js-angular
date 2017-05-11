@@ -39,7 +39,7 @@ describe('PizzaListComponent', () => {
   });
 
 
-  it('should hightlight the selected pizza', () => {
+  it('should highlight the selected pizza', () => {
     const selectedPizzaTiles = fixture.debugElement.queryAll(By.css('.pizza-tile .pizza-tile--selected'));
 
     expect(selectedPizzaTiles.length).toBe(1);
