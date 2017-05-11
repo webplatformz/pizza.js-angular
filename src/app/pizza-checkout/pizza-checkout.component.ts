@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Address } from "app/typings/address";
 
 @Component({
   selector: 'app-pizza-checkout',
@@ -7,19 +8,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CheckoutPageComponent implements OnInit {
 
-  salutation: string;
-  firstname: string;
-  lastname: string;
-  street: string;
-  zip: string;
-  city: string;
-  phone: string;
+  address =  new Address();
 
   constructor() {
   }
 
   ngOnInit() {
-    this.salutation = 'Herr';
+    this.address.salutation = 'Herr';
   }
 
 }

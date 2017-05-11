@@ -1,7 +1,7 @@
 <form #addressForm="ngForm" id="addressForm">
 
   <div id="salutation" class="address-form__item address-form__item--full-width">
-    <select name="salutation" [(ngModel)]="salutation">
+    <select name="salutation" [(ngModel)]="address.salutation">
       <option>Frau</option>
       <option>Herr</option>
       <option>Other</option>
@@ -9,30 +9,30 @@
   </div>
 
   <div id="firstName" class="address-form__item">
-    <input type="text" name="firstname"  placeholder="Vorname" class="address-form__input" required/>
+    <input type="text" name="firstname" [(ngModel)]="address.firstname" #firstname="ngModel" placeholder="Vorname" class="address-form__input" required/>
     <span *ngIf="firstname.errors?.required && firstname.touched" class="address-form__validation-error-text">Vorname fehlt</span>
   </div>
 
   <div id="lastName" class="address-form__item">
-    <input type="text" name="lastname" [(ngModel)]="lastname" placeholder="Nachname"
+    <input type="text" name="lastname" [(ngModel)]="address.lastname" placeholder="Nachname"
            class="address-form__input address-form__input--validation-error"/>
     <span class="address-form__validation-error-text">Nachname fehlt</span>
   </div>
 
   <div id="streetAndNumber" class="address-form__item address-form__item--full-width">
-    <input type="text" name="street" [(ngModel)]="street" placeholder="Strasse / Nr" class="address-form__input"/>
+    <input type="text" name="street" [(ngModel)]="address.street" placeholder="Strasse / Nr" class="address-form__input"/>
   </div>
 
   <div id="cityZip" class="address-form__item">
-    <input type="text" [(ngModel)]="zip" name="zip" placeholder="PLZ" class="address-form__input"/>
+    <input type="text" [(ngModel)]="address.zip" name="zip" placeholder="PLZ" class="address-form__input"/>
   </div>
 
   <div class="address-form__item">
-    <input type="text" name="city" [(ngModel)]="city" placeholder="Ort" class="address-form__input"/>
+    <input type="text" name="city" [(ngModel)]="address.city" placeholder="Ort" class="address-form__input"/>
   </div>
 
   <div id="phoneNumber" class="address-form__item address-form__item--full-width">
-    <input type="tel" name="phone" [(ngModel)]="phone" placeholder="Telefonnummer" class="address-form__input"/>
+    <input type="tel" name="phone" [(ngModel)]="address.phone" placeholder="Telefonnummer" class="address-form__input"/>
   </div>
 
   <div class="address-form__item address-form-item--align-right">
