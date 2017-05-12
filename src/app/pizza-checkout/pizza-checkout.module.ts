@@ -6,11 +6,16 @@ import {PizzaCheckoutComponent} from './pizza-checkout.component';
 import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
-  declarations: [PizzaCheckoutComponent],
+  declarations: [
+    PizzaCheckoutComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     SharedModule
+  ],
+  exports: [
+    PizzaCheckoutComponent
   ],
   providers: []
 })
