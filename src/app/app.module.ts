@@ -1,3 +1,4 @@
+import { PizzaCheckoutModule } from './pizza-checkout/pizza-checkout.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -10,10 +11,10 @@ import {ShoppingCartComponent} from './pizza-counter/pizza-preview/shopping-cart
 import {PizzaService} from 'app/pizza-counter/pizza-selection/pizza.service';
 import {PizzaListComponent} from './pizza-counter/pizza-selection/pizza-list/pizza-list.component';
 import {IngredientListComponent} from './pizza-counter/pizza-selection/ingredient-list/ingredient-list.component';
-import {PizzaPageComponent} from './pizza-counter/pizza-counter.component';
+import {PizzaCounterComponent} from './pizza-counter/pizza-counter.component';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routes';
-import {CheckoutPageComponent} from './pizza-checkout/pizza-checkout.component';
+import {PizzaCheckoutComponent} from './pizza-checkout/pizza-checkout.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +24,13 @@ import {CheckoutPageComponent} from './pizza-checkout/pizza-checkout.component';
     ShoppingCartComponent,
     PizzaListComponent,
     IngredientListComponent,
-    PizzaPageComponent,
-    CheckoutPageComponent
+    PizzaCounterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes, {useHash: true})
+    RouterModule.forRoot(appRoutes, {useHash: true}),
+    PizzaCheckoutModule
   ],
   providers: [PizzaService],
   bootstrap: [AppComponent]

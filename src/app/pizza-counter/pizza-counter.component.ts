@@ -6,7 +6,7 @@ import {PizzaSelection} from '../typings/pizza-selection';
   templateUrl: './pizza-counter.component.html',
   styleUrls: ['./pizza-counter.component.css']
 })
-export class PizzaPageComponent {
+export class PizzaCounterComponent {
 
   pizzaSelection: PizzaSelection;
 

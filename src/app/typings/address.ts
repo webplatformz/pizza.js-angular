@@ -5,5 +5,5 @@ export class Address {
   public street: string;
   public zip: string;
   public city: string;
-  public phone: string
+  public phone: string;
 }
