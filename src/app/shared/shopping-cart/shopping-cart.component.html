@@ -48,6 +48,6 @@
         </div>
     </li>
 </ul>
-<div class="shopping-cart-order">
+<div *ngIf="showOrderButton" class="shopping-cart-order">
     <button class="order-button" routerLink="/checkout">Order</button>
 </div>
