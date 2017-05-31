@@ -8,10 +8,10 @@ import {PizzaSelection} from '../typings/pizza-selection';
 })
 export class PizzaCounterComponent {
 
-  pizzaSelection: PizzaSelection;
+  currentPizzaSelection: PizzaSelection;
 
   onChangePizzaConfiguration(pizzaSelection: PizzaSelection) {
-    this.pizzaSelection = pizzaSelection;
+    this.currentPizzaSelection = pizzaSelection;
   }
 
 }

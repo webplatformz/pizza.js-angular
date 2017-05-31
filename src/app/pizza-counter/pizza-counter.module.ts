@@ -23,6 +23,9 @@ import {SharedModule} from '../shared/shared.module';
     HttpModule,
     SharedModule
   ],
+  exports: [
+    PizzaCounterComponent
+  ],
   providers: [PizzaService]
 })
 export class PizzaCounterModule {
