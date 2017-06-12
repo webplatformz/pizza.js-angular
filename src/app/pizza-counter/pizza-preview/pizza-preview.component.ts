@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
 import {PizzaSelection} from '../../typings/pizza-selection';
 
 @Component({
@@ -15,7 +15,6 @@ export class PizzaPreviewComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   togglePreview() {
