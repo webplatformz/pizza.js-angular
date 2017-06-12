@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { Address } from 'app/typings/address';
+import {Address} from 'app/typings/address';
 
 @Component({
   selector: 'app-pizza-checkout',
@@ -8,7 +8,7 @@ import { Address } from 'app/typings/address';
 })
 export class PizzaCheckoutComponent implements OnInit {
 
-  address =  new Address();
+  address = new Address();
 
   constructor() {
   }
@@ -17,4 +17,7 @@ export class PizzaCheckoutComponent implements OnInit {
     this.address.salutation = 'Herr';
   }
 
+  sendOrder() {
+    console.log(this.address);
+  }
 }

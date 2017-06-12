@@ -1,4 +1,4 @@
-import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pizza-input-field',
@@ -22,6 +22,9 @@ export class PizzaInputFieldComponent implements OnInit {
 
   @Input()
   errorMessage: string;
+
+  @Output()
+  valueChange = new EventEmitter<any>();
 
   @Input()
   value: any;
