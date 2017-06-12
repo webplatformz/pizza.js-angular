@@ -10,33 +10,45 @@
     </select>
   </div>
 
-  <div id="firstName" class="address-form__item">
-    <input type="text" name="firstname" [(ngModel)]="address.firstname" #firstname="ngModel" placeholder="Vorname" class="address-form__input" required/>
-    <span *ngIf="firstname.errors?.required && firstname.touched" class="address-form__validation-error-text">Vorname fehlt</span>
-  </div>
+  <app-pizza-input-field name="firstName"
+                         [(value)]="address.firstname"
+                         placeholder="Vorname"
+                         errorMessage="Vorname fehlt">
+  </app-pizza-input-field>
 
-  <div id="lastName" class="address-form__item">
-    <input type="text" name="lastname" [(ngModel)]="address.lastname" placeholder="Nachname"
-           class="address-form__input"
-           #lastname="ngModel" required/>
-    <span *ngIf="lastname.errors?.required && lastname.touched" class="address-form__validation-error-text">Nachname fehlt</span>
-  </div>
+  <app-pizza-input-field name="lastName"
+                         [(value)]="address.lastname"
+                         placeholder="Nachname"
+                         errorMessage="Nachname fehlt">
+  </app-pizza-input-field>
 
-  <div id="streetAndNumber" class="address-form__item address-form__item--full-width">
-    <input type="text" name="street" [(ngModel)]="address.street" placeholder="Strasse / Nr" class="address-form__input"/>
-  </div>
+  <app-pizza-input-field name="streetAndNumber"
+                         [(value)]="address.street"
+                         placeholder="Strasse / Nr"
+                         errorMessage="Strasse / Nr fehlt"
+                         [fullWidth]="true">
+  </app-pizza-input-field>
 
-  <div id="cityZip" class="address-form__item">
-    <input type="text" [(ngModel)]="address.zip" name="zip" placeholder="PLZ" class="address-form__input"/>
-  </div>
+  <app-pizza-input-field name="zip"
+                         type="number"
+                         [(value)]="address.zip"
+                         placeholder="Postleitzahl"
+                         errorMessage="Postleitzahl fehlt">
+  </app-pizza-input-field>
 
-  <div class="address-form__item">
-    <input type="text" name="city" [(ngModel)]="address.city" placeholder="Ort" class="address-form__input"/>
-  </div>
+  <app-pizza-input-field name="city"
+                         [(value)]="address.city"
+                         placeholder="Stadt"
+                         errorMessage="Stadt fehlt">
+  </app-pizza-input-field>
 
-  <div id="phoneNumber" class="address-form__item address-form__item--full-width">
-    <input type="tel" name="phone" [(ngModel)]="address.phone" placeholder="Telefonnummer" class="address-form__input"/>
-  </div>
+  <app-pizza-input-field name="phoneNumber"
+                         type="tel"
+                         [(value)]="address.phone"
+                         placeholder="Telefonnummer"
+                         errorMessage="Telefonnummer fehlt"
+                         [fullWidth]="true">
+  </app-pizza-input-field>
 
   <div class="address-form__item address-form-item--align-right">
     <button type="submit" class="address-form__order-button">Bestellen!</button>

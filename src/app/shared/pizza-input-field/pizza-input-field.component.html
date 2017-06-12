@@ -1,0 +1,3 @@
+<input [attr.type]="type" [name]="name" [(ngModel)]="value" #inputField="ngModel"
+       placeholder="{{placeholder}}" class="address-form__input" required/>
+<span *ngIf="inputField.errors?.required && inputField.touched" class="address-form__validation-error-text">{{errorMessage}}</span>
