@@ -13,20 +13,9 @@
 </div>
 <hr class="pizza-selection-divider">
 <div id="pizzaIngredients">
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Salami</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Schinken</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Artischocken</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Ananas</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Kapern</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Sardellen</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Büffelmozzarella</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Cherry-Tomaten</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Gruyère</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Rucola</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Speck</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Oliven</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Trüffel</label>
-  <label class="pizza-ingredients__item"><input type="checkbox"/> Scharf</label>
+  <label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
+    <input type="checkbox" />{{ingredient.name}}
+  </label>
 </div>
 <hr class="pizza-selection-divider">
 <button class="order-button">Add to Shopping Cart</button>

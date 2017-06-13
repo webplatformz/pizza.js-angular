@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Pizza} from '../model/pizza';
+import {Ingredient} from '../model/ingredient';
 
 @Component({
   selector: 'app-pizza-selection',
@@ -8,13 +9,64 @@ import {Pizza} from '../model/pizza';
 })
 export class PizzaSelectionComponent implements OnInit {
   pizzas: Pizza[];
+  ingredients: Ingredient[];
 
   constructor() {
     this.pizzas = [
       {name: 'Margherita', price: 12.90, ingredients: ['Tomaten', 'Mozzarella', 'Oregano']},
-      {name: 'Prosciutto et Funghi', price: 14.00, ingredients: ['Tomate', 'Mozzarella', 'Oregano', 'Schinken', 'Pilze']},
+      {
+        name: 'Prosciutto et Funghi',
+        price: 14.00,
+        ingredients: ['Tomate', 'Mozzarella', 'Oregano', 'Schinken', 'Pilze']
+      },
       {name: 'Napoli', price: 18.00, ingredients: ['Tomaten', 'Mozzarella', 'Sardellen', 'Kapern', 'Oregano']}
     ];
+
+    this.ingredients = [
+      {
+        'name': 'Salami',
+        'price': 1.70
+      },
+      {
+        'name': 'Schinken',
+        'price': 1.20
+      },
+      {
+        'name': 'Mozzarella',
+        'price': 1.50
+      },
+      {
+        'name': 'Artischocken',
+        'price': 1.80
+      },
+      {
+        'name': 'Ananas',
+        'price': 1.40
+      },
+      {
+        'name': 'Kapern',
+        'price': 1.00
+      },
+      {
+        'name': 'Sardellen',
+        'price': 3.50
+      },
+      {
+        'name': 'Büffelmozzarella',
+        'price': 2.10
+      },
+      {
+        'name': 'Cherry-Tomaten',
+        'price': 1.60
+      },
+      {
+        'name': 'Gruyère',
+        'price': 0.80
+      },
+      {
+        'name': 'Rucola',
+        'price': 2.50
+      }];
   }
 
   ngOnInit() {
