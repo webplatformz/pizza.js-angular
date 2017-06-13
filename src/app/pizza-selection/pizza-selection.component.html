@@ -1,5 +1,8 @@
 <div class="pizza-tiles">
-  <div *ngFor="let pizza of pizzas" class="pizza-tile">
+  <div *ngFor="let pizza of pizzas" class="pizza-tile"
+       [ngClass]="{'pizza-tile--selected': pizza.name === selectedPizza?.name}"
+       (click)="onSelectPizza(pizza)"
+  >
     <div class="pizza-tile__avatar">
       {{pizza.name.substring(0, 1)}}
     </div>
