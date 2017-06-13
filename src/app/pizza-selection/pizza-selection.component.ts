@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Pizza} from '../model/pizza';
-const backend = require('../backend.json');
 
 @Component({
   selector: 'app-pizza-selection',
@@ -11,10 +10,14 @@ export class PizzaSelectionComponent implements OnInit {
   pizzas: Pizza[];
 
   constructor() {
+    this.pizzas = [
+      {name: 'Margherita', price: 12.90, ingredients: ['Tomaten', 'Mozzarella', 'Oregano']},
+      {name: 'Prosciutto et Funghi', price: 14.00, ingredients: ['Tomate', 'Mozzarella', 'Oregano', 'Schinken', 'Pilze']},
+      {name: 'Napoli', price: 18.00, ingredients: ['Tomaten', 'Mozzarella', 'Sardellen', 'Kapern', 'Oregano']}
+    ];
   }
 
   ngOnInit() {
-    this.pizzas = backend.pizzas;
   }
 
 }
