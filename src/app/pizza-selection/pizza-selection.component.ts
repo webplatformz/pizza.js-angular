@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Pizza} from '../model/pizza';
+const backend = require('../backend.json');
 
 @Component({
   selector: 'app-pizza-selection',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pizza-selection.component.css']
 })
 export class PizzaSelectionComponent implements OnInit {
+  pizzas: Pizza[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.pizzas = backend.pizzas;
   }
 
 }
