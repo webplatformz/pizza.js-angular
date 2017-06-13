@@ -16,7 +16,6 @@ export class PizzaSelectionComponent implements OnInit {
       {name: 'Napoli', price: 18.00, ingredients: ['Tomaten', 'Mozzarella', 'Sardellen', 'Kapern', 'Oregano']}
     ];
 
-    // TODO: add ingredients here as well so they don't need to manually copy everything
   }
 
   ngOnInit() {
