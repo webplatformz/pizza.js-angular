@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {PizzaSelection} from './typings/pizza-selection';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,5 @@ import {PizzaSelection} from './typings/pizza-selection';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title = 'app';
 }
