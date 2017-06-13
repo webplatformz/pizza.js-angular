@@ -7,6 +7,7 @@ import {PizzaCheckoutModule} from './pizza-checkout/pizza-checkout.module';
 import {AppComponent} from './app.component';
 
 import {appRoutes} from './app.routes';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {appRoutes} from './app.routes';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
+    CoreModule,
     PizzaCheckoutModule,
     PizzaCounterModule
   ],

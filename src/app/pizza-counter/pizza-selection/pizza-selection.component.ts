@@ -3,6 +3,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Pizza} from 'app/typings/pizza';
 import {PizzaService} from 'app/pizza-counter/pizza-selection/pizza.service';
 import {PizzaSelection} from '../../typings/pizza-selection';
+import {ShoppingCartService} from '../../core/shopping-cart.service';
 
 @Component({
   selector: 'app-pizza-selection',
@@ -20,7 +21,7 @@ export class PizzaSelectionComponent implements OnInit {
 
   pizzaSelection: PizzaSelection = new PizzaSelection();
 
-  constructor(private pizzaService: PizzaService) {
+  constructor(private pizzaService: PizzaService, private shoppingCartService: ShoppingCartService) {
   }
 
   ngOnInit(): void {
@@ -50,5 +51,11 @@ export class PizzaSelectionComponent implements OnInit {
 
   private emitPizzaConfiguration() {
     this.onChangePizzaConfiguration.emit(Object.assign({}, this.pizzaSelection));
+  }
+
+  onAddPizzaToShoppingCart() {
+    this.shoppingCartService.addPizzaSelection(this.pizzaSelection);
+    this.pizzaSelection = new PizzaSelection();
+    this.onSelectPizza(this.pizzas[0]);
   }
 }

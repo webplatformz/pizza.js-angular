@@ -1,19 +1,18 @@
-import { Injectable } from '@angular/core';
-import { PizzaSelection } from 'app/typings/pizza-selection';
+import {Injectable} from '@angular/core';
+import {PizzaSelection} from 'app/typings/pizza-selection';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class ShoppingCartService {
 
-  private selections: PizzaSelection[] = [];
+  private selectionsSource = new BehaviorSubject<PizzaSelection[]>([]);
+  selections$ = this.selectionsSource.asObservable();
 
-  constructor() { }
+  constructor() {
+  }
 
   public addPizzaSelection(pizzaSelection: PizzaSelection) {
-    this.selections.push(pizzaSelection);
+    const currentSelections: PizzaSelection[] = this.selectionsSource.getValue();
+    this.selectionsSource.next([...currentSelections, pizzaSelection]);
   }
-
-  public get pizzaSelections() {
-    return this.selections;
-  }
-
 }
