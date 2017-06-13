@@ -11,6 +11,7 @@ export class PizzaSelectionComponent implements OnInit {
   pizzas: Pizza[];
   ingredients: Ingredient[];
   selectedPizza: Pizza;
+  selectedIngredients: Ingredient[] = [];
 
   constructor() {
     this.pizzas = this.loadPizzas();
@@ -23,6 +24,16 @@ export class PizzaSelectionComponent implements OnInit {
 
   onSelectPizza(pizza: Pizza) {
     this.selectedPizza = pizza;
+  }
+
+  onSelectIngredient(selectedIngredient: Ingredient, checked: boolean) {
+    if (checked) {
+      this.selectedIngredients = this.selectedIngredients.concat(selectedIngredient);
+    } else {
+      this.selectedIngredients.filter(ingredient => ingredient.name !== selectedIngredient.name);
+    }
+
+    console.log(this.selectedIngredients);
   }
 
   private loadPizzas() {

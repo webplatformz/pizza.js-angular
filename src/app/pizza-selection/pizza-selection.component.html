@@ -17,7 +17,10 @@
 <hr class="pizza-selection-divider">
 <div id="pizzaIngredients">
   <label *ngFor="let ingredient of ingredients" class="pizza-ingredients__item">
-    <input type="checkbox" />{{ingredient.name}}
+    <input type="checkbox"
+           [checked]="selectedIngredients.includes(ingredient)"
+           (change)="onSelectIngredient(ingredient, $event.target.checked)"
+    />{{ingredient.name}}
   </label>
 </div>
 <hr class="pizza-selection-divider">
