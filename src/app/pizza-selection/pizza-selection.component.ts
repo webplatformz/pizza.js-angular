@@ -30,7 +30,7 @@ export class PizzaSelectionComponent implements OnInit {
     if (checked) {
       this.selectedIngredients = this.selectedIngredients.concat(selectedIngredient);
     } else {
-      this.selectedIngredients.filter(ingredient => ingredient.name !== selectedIngredient.name);
+      this.selectedIngredients = this.selectedIngredients.filter(ingredient => ingredient.name !== selectedIngredient.name);
     }
 
     console.log(this.selectedIngredients);
