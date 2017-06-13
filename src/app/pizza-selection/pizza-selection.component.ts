@@ -10,9 +10,23 @@ import {Ingredient} from '../model/ingredient';
 export class PizzaSelectionComponent implements OnInit {
   pizzas: Pizza[];
   ingredients: Ingredient[];
+  selectedPizza: Pizza;
 
   constructor() {
-    this.pizzas = [
+    this.pizzas = this.loadPizzas();
+    this.ingredients = this.loadIngredients();
+    this.selectedPizza = this.pizzas[0];
+  }
+
+  ngOnInit() {
+  }
+
+  onSelectPizza(pizza: Pizza) {
+    this.selectedPizza = pizza;
+  }
+
+  private loadPizzas() {
+    return [
       {name: 'Margherita', price: 12.90, ingredients: ['Tomaten', 'Mozzarella', 'Oregano']},
       {
         name: 'Prosciutto et Funghi',
@@ -21,8 +35,10 @@ export class PizzaSelectionComponent implements OnInit {
       },
       {name: 'Napoli', price: 18.00, ingredients: ['Tomaten', 'Mozzarella', 'Sardellen', 'Kapern', 'Oregano']}
     ];
+  }
 
-    this.ingredients = [
+  private loadIngredients() {
+    return [
       {
         'name': 'Salami',
         'price': 1.70
@@ -67,9 +83,6 @@ export class PizzaSelectionComponent implements OnInit {
         'name': 'Rucola',
         'price': 2.50
       }];
-  }
-
-  ngOnInit() {
   }
 
 }
