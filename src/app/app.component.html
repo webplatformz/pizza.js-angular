@@ -1,20 +1,121 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<main>
+  <div id="pizzaSelection">
+    <div class="pizza-tiles">
+      <div class="pizza-tile">
+        <div class="pizza-tile__avatar">
+          M
+        </div>
+        <div class="pizza-tile__content">
+          <h3 class="pizza-tile__title">Margherita</h3>
+          <p class="pizza-tile__description">
+            Tomate, Mozzarella, Oregano
+          </p>
+        </div>
+      </div>
+      <div class="pizza-tile">
+        <div class="pizza-tile__avatar">
+          P&F
+        </div>
+        <div class="pizza-tile__content">
+          <h3 class="pizza-tile__title">Prosciutto et Funghi</h3>
+          <p class="pizza-tile__description">
+            Tomate, Mozzarella, Oregano, Schinken, Pilze und noch mehr Pilze
+          </p>
+        </div>
+      </div>
+      <div class="pizza-tile">
+        <div class="pizza-tile__avatar">
+          M
+        </div>
+        <div class="pizza-tile__content pizza-tile--selected">
+          <h3 class="pizza-tile__title">Napoli</h3>
+          <p class="pizza-tile__description">
+            Tomate, Mozzarella, Sardellen, Kapern
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="pizza-selection-divider">
+    <div id="pizzaIngredients">
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Salami</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Schinken</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Artischocken</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Ananas</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Kapern</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Sardellen</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Büffelmozzarella</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Cherry-Tomaten</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Gruyère</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Rucola</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Speck</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Oliven</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Trüffel</label>
+      <label class="pizza-ingredients__item"><input type="checkbox" /> Scharf</label>
+    </div>
+    <hr class="pizza-selection-divider">
+    <button class="order-button">Add to Shopping Cart</button>
+  </div>
+  <div id="pizzaPreview">
+    <button onclick="togglePreview()" class="pizza-preview-toggler"><div class="pizza-preview-toggler__icon">&lt;</div></button>
+    <div class="pizza-preview-scroll">
+      <div id="pizzaAnimation">
+        <img class="pizza-picture" alt="Pizza" src="/assets/images/pizza.png" />
+      </div>
+      <div id="shoppingCart">
+        <ul class="shopping-cart-list">
+          <li class="shopping-cart-list__item">
+            <div class="shopping-cart-list-item-title">
+              Margherita
+            </div>
+            <div class="shopping-cart-list-item-tools">
+              <select>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              14.90
+            </div>
+          </li>
+          <li class="shopping-cart-list__item">
+            <div class="shopping-cart-list-item-title">
+              Calzone
+            </div>
+            <div class="shopping-cart-list-item-tools">
+              <select>
+                <option>0</option>
+                <option>1</option>
+                <option selected>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              12.50
+            </div>
+          </li>
+          <li class="shopping-cart-list__item">
+            <div class="shopping-cart-list-item-title">
+              Prosciutto
+            </div>
+            <div class="shopping-cart-list-item-tools">
+              <select>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option selected>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              7.00
+            </div>
+          </li>
+        </ul>
+        <div class="shopping-cart-order">
+          <button class="order-button" onclick="orderPizza()">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
