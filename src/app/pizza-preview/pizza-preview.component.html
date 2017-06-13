@@ -1,0 +1,63 @@
+<button onclick="togglePreview()" class="pizza-preview-toggler">
+  <div class="pizza-preview-toggler__icon">&lt;</div>
+</button>
+<div class="pizza-preview-scroll">
+  <div id="pizzaAnimation">
+    <img class="pizza-picture" alt="Pizza" src="/assets/images/pizza.png"/>
+  </div>
+  <div id="shoppingCart">
+    <ul class="shopping-cart-list">
+      <li class="shopping-cart-list__item">
+        <div class="shopping-cart-list-item-title">
+          Margherita
+        </div>
+        <div class="shopping-cart-list-item-tools">
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          14.90
+        </div>
+      </li>
+      <li class="shopping-cart-list__item">
+        <div class="shopping-cart-list-item-title">
+          Calzone
+        </div>
+        <div class="shopping-cart-list-item-tools">
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          12.50
+        </div>
+      </li>
+      <li class="shopping-cart-list__item">
+        <div class="shopping-cart-list-item-title">
+          Prosciutto
+        </div>
+        <div class="shopping-cart-list-item-tools">
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option selected>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          7.00
+        </div>
+      </li>
+    </ul>
+    <div class="shopping-cart-order">
+      <button class="order-button" onclick="orderPizza()">Order</button>
+    </div>
+  </div>
+</div>
