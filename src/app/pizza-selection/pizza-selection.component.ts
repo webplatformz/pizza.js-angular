@@ -32,8 +32,13 @@ export class PizzaSelectionComponent implements OnInit {
     } else {
       this.selectedIngredients = this.selectedIngredients.filter(ingredient => ingredient.name !== selectedIngredient.name);
     }
+  }
 
-    console.log(this.selectedIngredients);
+  getTotalPrice(): number {
+    const ingredientsPrice = this.selectedIngredients
+      .map(ingredient => ingredient.price)
+      .reduce((totalPrice, ingredientPrice) => totalPrice + ingredientPrice, 0);
+    return this.selectedPizza.price + ingredientsPrice;
   }
 
   private loadPizzas() {

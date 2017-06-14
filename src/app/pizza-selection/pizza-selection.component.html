@@ -20,8 +20,9 @@
     <input type="checkbox"
            [checked]="selectedIngredients.includes(ingredient)"
            (change)="onSelectIngredient(ingredient, $event.target.checked)"
-    />{{ingredient.name}}
+    />{{ingredient.name}} {{ingredient.price}}
   </label>
 </div>
 <hr class="pizza-selection-divider">
+{{ getTotalPrice() }}
 <button class="order-button">Add to Shopping Cart</button>
