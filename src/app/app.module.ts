@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { PizzaPreviewComponent } from './pizza-preview/pizza-preview.component';
 import { PizzaSelectionComponent } from './pizza-selection/pizza-selection.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { AppCurrencyPipe } from './pipes/app-currency.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaPreviewComponent,
     PizzaSelectionComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    AppCurrencyPipe
   ],
   imports: [
     BrowserModule
