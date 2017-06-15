@@ -41,7 +41,8 @@ export class PizzaSelectionComponent implements OnInit {
     const ingredientsPrice = this.selectedIngredients
       .map(ingredient => ingredient.price)
       .reduce((totalPrice, ingredientPrice) => totalPrice + ingredientPrice, 0);
-    return this.selectedPizza.price + ingredientsPrice;
+    const pizzaPrice = this.selectedPizza ? this.selectedPizza.price : 0;
+    return pizzaPrice + ingredientsPrice;
   }
 
   private loadIngredients() {
