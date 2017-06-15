@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Pizza} from '../model/pizza';
 import {Ingredient} from '../model/ingredient';
+import {PizzaService} from './pizza.service';
 
 @Component({
   selector: 'app-pizza-selection',
@@ -13,13 +14,15 @@ export class PizzaSelectionComponent implements OnInit {
   selectedPizza: Pizza;
   selectedIngredients: Ingredient[] = [];
 
-  constructor() {
-    this.pizzas = this.loadPizzas();
+  constructor(private pizzaService: PizzaService) {
     this.ingredients = this.loadIngredients();
-    this.selectedPizza = this.pizzas[0];
   }
 
   ngOnInit() {
+    this.pizzaService.getPizzas().subscribe(pizzas => {
+      this.pizzas = pizzas;
+      this.selectedPizza = this.pizzas[0];
+    });
   }
 
   onSelectPizza(pizza: Pizza) {
@@ -39,18 +42,6 @@ export class PizzaSelectionComponent implements OnInit {
       .map(ingredient => ingredient.price)
       .reduce((totalPrice, ingredientPrice) => totalPrice + ingredientPrice, 0);
     return this.selectedPizza.price + ingredientsPrice;
-  }
-
-  private loadPizzas() {
-    return [
-      {name: 'Margherita', price: 12.90, ingredients: ['Tomaten', 'Mozzarella', 'Oregano']},
-      {
-        name: 'Prosciutto et Funghi',
-        price: 14.00,
-        ingredients: ['Tomate', 'Mozzarella', 'Oregano', 'Schinken', 'Pilze']
-      },
-      {name: 'Napoli', price: 18.00, ingredients: ['Tomaten', 'Mozzarella', 'Sardellen', 'Kapern', 'Oregano']}
-    ];
   }
 
   private loadIngredients() {
