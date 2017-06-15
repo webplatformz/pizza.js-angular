@@ -15,13 +15,16 @@ export class PizzaSelectionComponent implements OnInit {
   selectedIngredients: Ingredient[] = [];
 
   constructor(private pizzaService: PizzaService) {
-    this.ingredients = this.loadIngredients();
   }
 
   ngOnInit() {
     this.pizzaService.getPizzas().subscribe(pizzas => {
       this.pizzas = pizzas;
       this.selectedPizza = this.pizzas[0];
+    });
+
+    this.pizzaService.getIngredients().subscribe(ingredients => {
+      this.ingredients = ingredients;
     });
   }
 
@@ -43,54 +46,6 @@ export class PizzaSelectionComponent implements OnInit {
       .reduce((totalPrice, ingredientPrice) => totalPrice + ingredientPrice, 0);
     const pizzaPrice = this.selectedPizza ? this.selectedPizza.price : 0;
     return pizzaPrice + ingredientsPrice;
-  }
-
-  private loadIngredients() {
-    return [
-      {
-        'name': 'Salami',
-        'price': 1.70
-      },
-      {
-        'name': 'Schinken',
-        'price': 1.20
-      },
-      {
-        'name': 'Mozzarella',
-        'price': 1.50
-      },
-      {
-        'name': 'Artischocken',
-        'price': 1.80
-      },
-      {
-        'name': 'Ananas',
-        'price': 1.40
-      },
-      {
-        'name': 'Kapern',
-        'price': 1.00
-      },
-      {
-        'name': 'Sardellen',
-        'price': 3.50
-      },
-      {
-        'name': 'Büffelmozzarella',
-        'price': 2.10
-      },
-      {
-        'name': 'Cherry-Tomaten',
-        'price': 1.60
-      },
-      {
-        'name': 'Gruyère',
-        'price': 0.80
-      },
-      {
-        'name': 'Rucola',
-        'price': 2.50
-      }];
   }
 
 }
